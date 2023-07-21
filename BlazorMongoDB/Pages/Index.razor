@@ -1,108 +1,28 @@
 ﻿@page "/"
 @using BlazorMongoDB.Data
-@inject BlazorMongoDB.IService.IStudentService studentService
+@inject BlazorMongoDB.IService.IUserService userService
+@inject NavigationManager navManager
 
+<h3>Hello @DeviceId</h3>
 
-<div class="row">
-    <div class="col-md-4">
-        <div class="row">
-            <div class="col-md-4">
-                <label>Name :</label>
-            </div>
-            <div class="col-md-8">
-                <input @bind="Student.Name" style="width:100%;" placeholder="Student Name"/>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <label>Roll :</label>
-            </div>
-            <div class="col-md-8">
-                <input @bind="Student.Roll" style="width:100%;" placeholder="Student Roll" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <label>Age :</label>
-            </div>
-            <div class="col-md-8">
-                <input @bind="Student.Age" type="number" style="width:100%;" placeholder="Student Age" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-8">
-                <button class="btn btn-primary" @onclick="@(e => Save())">Save</button>
-                <button class="btn btn-danger" @onclick="@(e => Reset())" style="float:right;">Reset</button>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="col-md-8">
-        <table class="table table-striped table-bordered">
-            <thead>
-                <tr>
-                    <th>Student Id</th>
-                    <th>Name</th>
-                    <th>Roll</th>
-                    <th>Age</th>
-                    <th>Action</th>
-
-                </tr>
-            </thead>
-            <tbody>
-                @if (Students.Count() > 0)
-                {
-                    @foreach (var stu in Students)
-                    {
-                        <tr>
-                            <td>@stu.Id</td>
-                            <td>@stu.Name</td>
-                            <td>@stu.Roll</td>
-                            <td>@stu.Age</td>
-                          <td>
-                                <button class="btn btn-primary" @onclick="@(e => Edit(@stu.Id))">Edit</button>
-                                <button class="btn btn-danger" @onclick="@(e => Delete(@stu.Id))">Delete</button>
-                          </td>
-                        </tr>
-                    }
-                }
-            </tbody>
-        </table>
-
-    </div>
-</div>
 
 @code{
-    Student Student = new Student();
-    List<Student> Students = new List<Student>();
+    private string DeviceId => System.Environment.MachineName;
+    string message = string.Empty;
 
     protected override async Task OnInitializedAsync()
     {
-        GetStudents();
-    }
-    private void GetStudents()
-    {
-        Students = studentService.GetStudents();
-    }
-    private void Save()
-    {
-        studentService.SaveOrUpdate(Student);
-        Reset();
-        GetStudents();
-    }
-    private void Reset()
-    {
-        Student = new Student();
-    }
-    private void Edit(string studentId)
-    {
-        Student = studentService.GetStudent(studentId);
-    }
-    private void Delete(string studentId)
-    {
-        studentService.Delete(studentId);
-        GetStudents();
+
+        var user = userService.GetUser(DeviceId);
+        Console.WriteLine(user);
+        if (user != null)
+        {
+            navManager.NavigateTo("/welcome");
+        }else
+        {
+            navManager.NavigateTo("/register");
+        }
+        
     }
 }
+

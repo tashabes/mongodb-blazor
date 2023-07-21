@@ -1,0 +1,92 @@
+﻿@page "/register"
+@using BlazorMongoDB.Data
+@using BlazorMongoDB.Service;
+@inject BlazorMongoDB.IService.IUserService userService
+@inject IJSRuntime jsRuntime
+@inject BlazorMongoDB.Service.UserIPAddressService userIPAddressService
+@using Microsoft.AspNetCore.Http
+
+
+
+<h3>Register</h3>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="row">
+            <div class="col-md-4">
+                <label>Name:</label>
+            </div>
+            <div class="col-md-8">
+                <input @bind="User.Name" style="width:100%;" placeholder="Name" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Phone Number:</label>
+            </div>
+            <div class="col-md-8">
+                <input @bind="User.PhoneNumber" style="width:100%;" placeholder="Phone Number" />
+            </div>
+        </div>
+        <br />
+
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-8">
+                <button class="btn btn-primary" @onclick="@(e => SaveAsync())">Save</button>
+
+                <button class="btn btn-danger" @onclick="@(e => Reset())" style="float:right;">Reset</button>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+@code {
+
+    Users User = new Users();
+
+    List<Users> Users = new List<Users>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        GetUsers();
+    }
+    private void GetUsers()
+    {
+        Users = userService.GetUsers();
+    }
+    private async Task SaveAsync()
+    {
+        User.MachineName1 = System.Environment.MachineName;
+        User.OperatingSystem = System.Runtime.InteropServices.RuntimeInformation.OSDescription;
+        bool containsWindows = User.OperatingSystem.Contains("Windows");
+        if(containsWindows)
+        {
+           User.System = "Windows";
+           User.UniqueIdentifier = await jsRuntime.InvokeAsync<string>("uuidInterop.getUUID");
+           User.IPAddress = await jsRuntime.InvokeAsync<string>("ipAddressInterop.getClientIPAddress");
+
+        }
+      
+       userService.SaveOrUpdate(User);
+       Reset();
+       GetUsers();
+    }
+    private void Reset()
+    {
+        User = new Users();
+    }
+    private void Edit(string userId)
+    {
+        User = userService.GetUser(userId);
+    }
+    private void Delete(string userId)
+    {
+        userService.Delete(userId);
+        GetUsers();
+    }
+}
+

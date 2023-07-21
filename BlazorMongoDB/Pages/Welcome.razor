@@ -1,0 +1,20 @@
+﻿@page "/welcome";
+@using BlazorMongoDB.Data
+@inject BlazorMongoDB.IService.IUserService userService
+
+<h3>Welcome back, @user.Name</h3>
+
+@code {
+    private string DeviceId => System.Environment.MachineName;
+    
+    Users user = new Users();
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        user = userService.GetUser(DeviceId);
+        Console.WriteLine(user.Name);
+
+
+    }
+}

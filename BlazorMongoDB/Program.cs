@@ -10,7 +10,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
-builder.Services.AddScoped<IStudentService, StudentService>();
+builder.Services.AddScoped<IUserService, UserService>();
+// Add this to the ConfigureServices method in Startup.cs
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<BlazorMongoDB.Service.UserIPAddressService>();
+
 
 var app = builder.Build();
 

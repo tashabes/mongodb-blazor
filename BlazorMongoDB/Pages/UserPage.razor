@@ -1,0 +1,77 @@
+﻿@page "/users"
+@using BlazorMongoDB.Data;
+@inject BlazorMongoDB.IService.IUserService userService
+
+<div class="col-md-8">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>User Id</th>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Machine Name 1</th>
+                <th>Operating System</th>
+                <th>System</th>
+                <th>Unique Identifier</th>
+                <th>IP Address</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @if (Users.Count() > 0)
+            {
+                @foreach (var use in Users)
+                {
+                    <tr>
+                        <td>@use.Id</td>
+                        <td>@use.Name</td>
+                        <td>@use.PhoneNumber</td>
+                        <td>@use.MachineName1</td>
+                        <td>@use.OperatingSystem</td>
+                        <td>@use.System</td>
+                        <td>@use.UniqueIdentifier</td>
+                        <td>@use.IPAddress</td>
+                        <td>
+                            <button class="btn btn-primary" @onclick="@(e => Edit(@use.Id))">Edit</button>
+                            <button class="btn btn-danger" @onclick="@(e => Delete(@use.Id))">Delete</button>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+</div>
+
+@code {
+    Users User = new Users();
+    List<Users> Users = new List<Users>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        GetUsers();
+    }
+    private void GetUsers()
+    {
+        Users = userService.GetUsers();
+    }
+    private void Save()
+    {
+        userService.SaveOrUpdate(User);
+        Reset();
+        GetUsers();
+    }
+    private void Reset()
+    {
+        User = new Users();
+    }
+    private void Edit(string userId)
+    {
+        User = userService.GetUser(userId);
+    }
+    private void Delete(string userId)
+    {
+        userService.Delete(userId);
+        GetUsers();
+    }
+}
