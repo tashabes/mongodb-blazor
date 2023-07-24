@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "aWk3HX4bGv4yYDMiHxYTiqNU0gUJwkPI7ZsoQQudV17GyPqGSs5ta5TMjaCFGra2s6dI2dPAldDXrquSQhMgdQ==",
+  "dgSpecHash": "BohxfEskoBdzf1dcOUpBstElMghiUu/H/BeMXlUJ198h3Xr3VzjeWJN/5xzej6/r6xNYcQlPmL0j18i9GTX9Cg==",
   "success": true,
   "projectFilePath": "C:\\Users\\NatashaAbel\\source\\repos\\BlazorMongoDB\\BlazorMongoDB\\BlazorMongoDB.csproj",
   "expectedPackageFiles": [
@@ -23,7 +23,7 @@
     "C:\\Users\\NatashaAbel\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
     "C:\\Users\\NatashaAbel\\.nuget\\packages\\xamarin.essentials\\1.7.7\\xamarin.essentials.1.7.7.nupkg.sha512",
     "C:\\Users\\NatashaAbel\\.nuget\\packages\\zstdsharp.port\\0.6.2\\zstdsharp.port.0.6.2.nupkg.sha512",
-    "C:\\Users\\NatashaAbel\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.22621.28\\microsoft.windows.sdk.net.ref.10.0.22621.28.nupkg.sha512"
+    "C:\\Users\\NatashaAbel\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.17763.28\\microsoft.windows.sdk.net.ref.10.0.17763.28.nupkg.sha512"
   ],
   "logs": []
 }

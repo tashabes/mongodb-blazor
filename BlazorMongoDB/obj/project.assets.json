@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net6.0-windows10.0.22621": {
+    "net6.0-windows10.0.17763": {
       "AWSSDK.Core/3.7.100.14": {
         "type": "package",
         "compile": {
@@ -860,7 +860,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net6.0-windows10.0.22621": [
+    "net6.0-windows10.0.17763": [
       "MongoDB.Driver >= 2.20.0",
       "Xamarin.Essentials >= 1.7.7"
     ]
@@ -887,7 +887,7 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0-windows10.0.22621.0"
+        "net6.0-windows10.0.17763.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -896,8 +896,8 @@
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net6.0-windows10.0.22621": {
-          "targetAlias": "net6.0-windows10.0.22621.0",
+        "net6.0-windows10.0.17763": {
+          "targetAlias": "net6.0-windows10.0.17763.0",
           "projectReferences": {}
         }
       },
@@ -908,8 +908,8 @@
       }
     },
     "frameworks": {
-      "net6.0-windows10.0.22621": {
-        "targetAlias": "net6.0-windows10.0.22621.0",
+      "net6.0-windows10.0.17763": {
+        "targetAlias": "net6.0-windows10.0.17763.0",
         "dependencies": {
           "MongoDB.Driver": {
             "target": "Package",
@@ -934,7 +934,7 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.Windows.SDK.NET.Ref",
-            "version": "[10.0.22621.28, 10.0.22621.28]"
+            "version": "[10.0.17763.28, 10.0.17763.28]"
           }
         ],
         "frameworkReferences": {
