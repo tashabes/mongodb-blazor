@@ -84,10 +84,12 @@
         } else if(containsAndroid)
         {
             User.System = "Android";
+            User.UniqueIdentifier = await jsRuntime.InvokeAsync<string>("uuidInterop.getUUID");
 
         }else if(containsiOS)
         {
             User.System = "iOS";
+            User.UniqueIdentifier = await jsRuntime.InvokeAsync<string>("uuidInterop.getUUID");
         }
 
        userService.SaveOrUpdate(User);
