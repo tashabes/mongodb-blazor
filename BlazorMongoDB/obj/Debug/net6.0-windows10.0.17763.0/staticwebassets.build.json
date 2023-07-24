@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "oFUbtUwp7IyPHU0l+IEGjL8vx8v8Yu8Fx5gzRQYHRyQ=",
+  "Hash": "e1GSrwTJVvr9Ax4sYRGSpLplERjCG3HAXllMNafivws=",
   "Source": "BlazorMongoDB",
   "BasePath": "_content/BlazorMongoDB",
   "Mode": "Default",
@@ -287,6 +287,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\ipaddress.js"
+    },
+    {
+      "Identity": "C:\\Users\\NatashaAbel\\source\\repos\\BlazorMongoDB\\BlazorMongoDB\\wwwroot\\js\\operatingSystem.js",
+      "SourceId": "BlazorMongoDB",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\NatashaAbel\\source\\repos\\BlazorMongoDB\\BlazorMongoDB\\wwwroot\\",
+      "BasePath": "_content/BlazorMongoDB",
+      "RelativePath": "js/operatingSystem.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\operatingSystem.js"
     },
     {
       "Identity": "C:\\Users\\NatashaAbel\\source\\repos\\BlazorMongoDB\\BlazorMongoDB\\wwwroot\\js\\uuidInterop.js",

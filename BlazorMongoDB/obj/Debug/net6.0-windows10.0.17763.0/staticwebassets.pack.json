@@ -61,6 +61,10 @@
       "PackagePath": "staticwebassets\\js\\ipaddress.js"
     },
     {
+      "Id": "C:\\Users\\NatashaAbel\\source\\repos\\BlazorMongoDB\\BlazorMongoDB\\wwwroot\\js\\operatingSystem.js",
+      "PackagePath": "staticwebassets\\js\\operatingSystem.js"
+    },
+    {
       "Id": "C:\\Users\\NatashaAbel\\source\\repos\\BlazorMongoDB\\BlazorMongoDB\\wwwroot\\js\\uuidInterop.js",
       "PackagePath": "staticwebassets\\js\\uuidInterop.js"
     },

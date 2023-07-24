@@ -63,7 +63,7 @@
     private async Task SaveAsync()
     {
         User.MachineName1 = System.Environment.MachineName;
-        User.OperatingSystem = System.Runtime.InteropServices.RuntimeInformation.OSDescription;
+        User.OperatingSystem = await jsRuntime.InvokeAsync<string>("getClientOS");
         //User.DeviceModel = DeviceInfo.Model;
         bool containsMac = User.OperatingSystem.Contains("Darwin");
         bool containsWindows = User.OperatingSystem.Contains("Windows");
