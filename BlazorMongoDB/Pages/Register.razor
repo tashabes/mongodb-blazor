@@ -66,9 +66,9 @@
         User.OperatingSystem = await jsRuntime.InvokeAsync<string>("getClientOS");
         //User.DeviceModel = DeviceInfo.Model;
         bool containsMac = User.OperatingSystem.Contains("Darwin");
-        bool containsWindows = User.OperatingSystem.Contains("Windows");
+        bool containsWindows = User.OperatingSystem.Contains("Win");
         bool containsAndroid = User.OperatingSystem.Contains("Android");
-        bool containsiOS = User.OperatingSystem.Contains("Android");
+        bool containsiOS = User.OperatingSystem.Contains("iPhone");
         if(containsWindows)
         {
             User.System = "Windows";
@@ -83,10 +83,11 @@
 
         } else if(containsAndroid)
         {
+            User.System = "Android";
 
         }else if(containsiOS)
         {
-            
+            User.System = "iOS";
         }
 
        userService.SaveOrUpdate(User);
