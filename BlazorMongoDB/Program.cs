@@ -4,10 +4,9 @@ using BlazorMongoDB.Service;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
-var builder = WebApplication.CreateBuilder(new WebApplicationOptions
-{
-    EnvironmentName = Environments.Production
-});
+
+var builder = WebApplication.CreateBuilder(args);
+
 
 // Add services to the container.
 builder.Services.AddRazorPages();
