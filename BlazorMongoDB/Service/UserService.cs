@@ -11,12 +11,12 @@ namespace BlazorMongoDB.Service
         private IMongoDatabase _database = null;
         private IMongoCollection<Users> _userTable = null;
 
-        public UserService() 
-        { 
-            _mongoClient = new MongoClient("mongodb://127.0.0.1:27017/");
-            _database = _mongoClient.GetDatabase("PasskeyLogin");
-            _userTable = _database.GetCollection<Users>("Users");
-        }
+        //public UserService() 
+        //{ 
+        //   // _mongoClient = new MongoClient("mongodb://127.0.0.1:27017/");
+        //    _database = _mongoClient.GetDatabase("PasskeyLogin");
+        //    _userTable = _database.GetCollection<Users>("Users");
+        //}
         public string Delete(string userId)
         {
             _userTable.DeleteOne(x=>x.Id == userId);
