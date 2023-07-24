@@ -5,6 +5,7 @@
 @inject IJSRuntime jsRuntime
 @inject BlazorMongoDB.Service.UserIPAddressService userIPAddressService
 @using Microsoft.AspNetCore.Http
+@using Xamarin.Essentials;
 
 
 
@@ -62,8 +63,11 @@
     {
         User.MachineName1 = System.Environment.MachineName;
         User.OperatingSystem = System.Runtime.InteropServices.RuntimeInformation.OSDescription;
+        //User.DeviceModel = DeviceInfo.Model;
         bool containsMac = User.OperatingSystem.Contains("Darwin");
         bool containsWindows = User.OperatingSystem.Contains("Windows");
+        bool containsAndroid = User.OperatingSystem.Contains("Android");
+        bool containsiOS = User.OperatingSystem.Contains("Android");
         if(containsWindows)
         {
             User.System = "Windows";
@@ -75,6 +79,12 @@
             User.System = "macOS";
             User.UniqueIdentifier = await jsRuntime.InvokeAsync<string>("uuidInterop.getUUID");
             User.IPAddress = await jsRuntime.InvokeAsync<string>("ipAddressInterop.getClientIPAddress");
+
+        } else if(containsAndroid)
+        {
+
+        }else if(containsiOS)
+        {
             
         }
 

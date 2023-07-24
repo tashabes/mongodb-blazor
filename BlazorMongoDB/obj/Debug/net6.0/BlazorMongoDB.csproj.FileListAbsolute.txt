@@ -44,3 +44,4 @@ C:\Users\NatashaAbel\source\repos\BlazorMongoDB\BlazorMongoDB\obj\Debug\net6.0\r
 C:\Users\NatashaAbel\source\repos\BlazorMongoDB\BlazorMongoDB\obj\Debug\net6.0\BlazorMongoDB.pdb
 C:\Users\NatashaAbel\source\repos\BlazorMongoDB\BlazorMongoDB\obj\Debug\net6.0\BlazorMongoDB.genruntimeconfig.cache
 C:\Users\NatashaAbel\source\repos\BlazorMongoDB\BlazorMongoDB\obj\Debug\net6.0\ref\BlazorMongoDB.dll
+C:\Users\NatashaAbel\source\repos\BlazorMongoDB\BlazorMongoDB\bin\Debug\net6.0\Xamarin.Essentials.dll

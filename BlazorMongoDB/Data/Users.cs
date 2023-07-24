@@ -22,5 +22,7 @@ namespace BlazorMongoDB.Data
         public string UniqueIdentifier { get; set; }
 
         public string IPAddress { get; set; }
+
+        public string DeviceModel { get; set; }
     }
 }
