@@ -11,12 +11,12 @@ namespace BlazorMongoDB.Service
         private IMongoDatabase _database = null;
         private IMongoCollection<Users> _userTable = null;
 
-        //public UserService() 
-        //{ 
-        //   // _mongoClient = new MongoClient("mongodb://127.0.0.1:27017/");
-        //    _database = _mongoClient.GetDatabase("PasskeyLogin");
-        //    _userTable = _database.GetCollection<Users>("Users");
-        //}
+        public UserService()
+        {
+            _mongoClient = new MongoClient("mongodb://passkeydemo:EATgFnoPVE0Z8yvhOmxxAeaIQqSrZo15vH82SW4VVww5CziwapruXawT7hYewXVNR9HEk5Pk4qGLACDbqvEYzw==@passkeydemo.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@passkeydemo@");
+            _database = _mongoClient.GetDatabase("PasskeyLogin");
+            _userTable = _database.GetCollection<Users>("Users");
+        }
         public string Delete(string userId)
         {
             _userTable.DeleteOne(x=>x.Id == userId);
