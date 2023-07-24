@@ -6,6 +6,7 @@
 @inject BlazorMongoDB.Service.UserIPAddressService userIPAddressService
 @using Microsoft.AspNetCore.Http
 @using Xamarin.Essentials;
+@inject NavigationManager navManager
 
 
 
@@ -91,6 +92,7 @@
        userService.SaveOrUpdate(User);
        Reset();
        GetUsers();
+        navManager.NavigateTo("/welcome");
     }
     private void Reset()
     {

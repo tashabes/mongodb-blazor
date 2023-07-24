@@ -1,8 +1,14 @@
 ﻿@page "/welcome";
 @using BlazorMongoDB.Data
 @inject BlazorMongoDB.IService.IUserService userService
+@inject NavigationManager navManager
 
 <h3>Welcome back, @user.Name</h3>
+
+<button class="btn btn-primary" @onclick="NavigateToAnotherPage">Users</button>
+
+
+
 
 @code {
     private string DeviceId => System.Environment.MachineName;
@@ -16,5 +22,10 @@
         Console.WriteLine(user.Name);
 
 
+    }
+
+    private void NavigateToAnotherPage()
+    {
+        navManager.NavigateTo("/users");
     }
 }
