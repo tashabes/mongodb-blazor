@@ -66,9 +66,9 @@
         User.OperatingSystem = await jsRuntime.InvokeAsync<string>("getClientOS");
         User.UniqueIdentifier = await jsRuntime.InvokeAsync<string>("uuidInterop.getUUID");
         User.IPAddress = await jsRuntime.InvokeAsync<string>("ipAddressInterop.getClientIPAddress");
-        bool containsMac = User.OperatingSystem.Contains("Mac");
-        bool containsWindows = User.SystemDetail.Contains("Win");
-        bool containsAndroid = User.OperatingSystem.Contains("Android");
+        bool containsMac = User.SystemDetail.Contains("Macintosh");
+        bool containsWindows = User.SystemDetail.Contains("Windows");
+        bool containsAndroid = User.SystemDetail.Contains("Android");
         bool containsiOS = User.SystemDetail.Contains("iPhone");
         if(containsWindows)
         {
