@@ -11,7 +11,7 @@
 
 
 @code {
-    private string DeviceId => Environment.UserName;
+    private string DeviceId => System.Security.Principal.WindowsIdentity.GetCurrent().Name;
     
     Users user = new Users();
 
