@@ -57,6 +57,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\NatashaAbel\\source\\repos\\BlazorMongoDB\\BlazorMongoDB\\wwwroot\\js\\clientName.js",
+      "PackagePath": "staticwebassets\\js\\clientName.js"
+    },
+    {
       "Id": "C:\\Users\\NatashaAbel\\source\\repos\\BlazorMongoDB\\BlazorMongoDB\\wwwroot\\js\\ipaddress.js",
       "PackagePath": "staticwebassets\\js\\ipaddress.js"
     },

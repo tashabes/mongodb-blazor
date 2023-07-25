@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "e1GSrwTJVvr9Ax4sYRGSpLplERjCG3HAXllMNafivws=",
+  "Hash": "eJ3aMTWN8jtOy/3fyjPoB+j7Wj9gFd7os0ROr7VkHiM=",
   "Source": "BlazorMongoDB",
   "BasePath": "_content/BlazorMongoDB",
   "Mode": "Default",
@@ -270,6 +270,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\NatashaAbel\\source\\repos\\BlazorMongoDB\\BlazorMongoDB\\wwwroot\\js\\clientName.js",
+      "SourceId": "BlazorMongoDB",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\NatashaAbel\\source\\repos\\BlazorMongoDB\\BlazorMongoDB\\wwwroot\\",
+      "BasePath": "_content/BlazorMongoDB",
+      "RelativePath": "js/clientName.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\clientName.js"
     },
     {
       "Identity": "C:\\Users\\NatashaAbel\\source\\repos\\BlazorMongoDB\\BlazorMongoDB\\wwwroot\\js\\ipaddress.js",
