@@ -6,7 +6,7 @@ namespace BlazorMongoDB.IService
     {
         void SaveOrUpdate(Users user);
 
-        Users GetUser(string machineNameOne);
+        Users GetUser(string systemDetail);
 
         List<Users> GetUsers();
 

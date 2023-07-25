@@ -2,27 +2,29 @@
 @using BlazorMongoDB.Data
 @inject BlazorMongoDB.IService.IUserService userService
 @inject NavigationManager navManager
+@inject IJSRuntime jsRuntime
 
-<h3>Hello @DeviceId</h3>
-
-
-@code{
-    private string DeviceId => System.Environment.MachineName;
+@code {
+    private string SystemDetail;
     string message = string.Empty;
 
-    protected override async Task OnInitializedAsync()
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-
-        var user = userService.GetUser(DeviceId);
-        Console.WriteLine(user);
-        if (user != null)
+        if (firstRender)
         {
-            navManager.NavigateTo("/welcome");
-        }else
-        {
-            navManager.NavigateTo("/register");
+            SystemDetail = await jsRuntime.InvokeAsync<string>("getUserAgent");
+            var user = userService.GetUser(SystemDetail);
+            Console.WriteLine(user);
+            if (user != null)
+            {
+                navManager.NavigateTo("/welcome");
+            }
+            else
+            {
+                navManager.NavigateTo("/register");
+            }
         }
-        
     }
 }
+
 

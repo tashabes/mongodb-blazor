@@ -24,9 +24,9 @@ namespace BlazorMongoDB.Service
 
         }
 
-        public Users GetUser(string userMachineName)
+        public Users GetUser(string systemDetail)
         {
-           return _userTable.Find(x=>x.MachineName1 == userMachineName).FirstOrDefault();
+           return _userTable.Find(x=>x.SystemDetail == systemDetail).FirstOrDefault();
 
         }
 

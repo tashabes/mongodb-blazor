@@ -11,7 +11,7 @@ namespace BlazorMongoDB.Data
 
         public string PhoneNumber { get; set; }
 
-        public string MachineName1 { get; set; }
+        public string SystemDetail { get; set; }
 
         public string MachineName2 { get; set; }
 

@@ -12,14 +12,14 @@
 
 
 @code {
-    private string DeviceId;
+    private string SystemDetail;
     Users user = new Users();
 
     protected override async Task OnInitializedAsync()
     {
         // Use await to get the result from the JavaScript Interop method.
-        DeviceId = await jsRuntime.InvokeAsync<string>("ipAddressInterop.getClientIPAddress");
-        user = userService.GetUser(DeviceId);
+        SystemDetail = await jsRuntime.InvokeAsync<string>("getUserAgent");
+        user = userService.GetUser(SystemDetail);
     }
 
     private void NavigateToAnotherPage()
