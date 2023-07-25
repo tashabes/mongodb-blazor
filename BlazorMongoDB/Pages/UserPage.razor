@@ -14,7 +14,6 @@
                 <th>System</th>
                 <th>Unique Identifier</th>
                 <th>IP Address</th>
-                <th>Device Model</th>
 
             </tr>
         </thead>
@@ -32,7 +31,6 @@
                         <td>@use.System</td>
                         <td>@use.UniqueIdentifier</td>
                         <td>@use.IPAddress</td>
-                        <td>@use.DeviceModel</td>
                         <td>
                             @*<button class="btn btn-primary" @onclick="@(e => Edit(@use.Id))">Edit</button>*@
                             <button class="btn btn-danger" @onclick="@(e => Delete(@use.Id))">Delete</button>
