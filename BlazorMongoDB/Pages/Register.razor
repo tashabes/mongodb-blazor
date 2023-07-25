@@ -64,7 +64,8 @@
     {
         User.SystemDetail = await jsRuntime.InvokeAsync<string>("getUserAgent");
         User.OperatingSystem = await jsRuntime.InvokeAsync<string>("getClientOS");
-        //User.DeviceModel = DeviceInfo.Model;
+        User.UniqueIdentifier = await jsRuntime.InvokeAsync<string>("uuidInterop.getUUID");
+        User.IPAddress = await jsRuntime.InvokeAsync<string>("ipAddressInterop.getClientIPAddress");
         bool containsMac = User.OperatingSystem.Contains("Darwin");
         bool containsWindows = User.SystemDetail.Contains("Win");
         bool containsAndroid = User.OperatingSystem.Contains("Android");
@@ -72,26 +73,18 @@
         if(containsWindows)
         {
             User.System = "Windows";
-            User.UniqueIdentifier = await jsRuntime.InvokeAsync<string>("uuidInterop.getUUID");
-            User.IPAddress = await jsRuntime.InvokeAsync<string>("ipAddressInterop.getClientIPAddress");
 
         } else if(containsMac)
         {
             User.System = "macOS";
-            User.UniqueIdentifier = await jsRuntime.InvokeAsync<string>("uuidInterop.getUUID");
-            User.IPAddress = await jsRuntime.InvokeAsync<string>("ipAddressInterop.getClientIPAddress");
 
         } else if(containsAndroid)
         {
             User.System = "Android";
-            User.UniqueIdentifier = await jsRuntime.InvokeAsync<string>("uuidInterop.getUUID");
-            User.IPAddress = await jsRuntime.InvokeAsync<string>("ipAddressInterop.getClientIPAddress");
 
         }else if(containsiOS)
         {
             User.System = "iOS";
-            User.UniqueIdentifier = await jsRuntime.InvokeAsync<string>("uuidInterop.getUUID");
-            User.IPAddress = await jsRuntime.InvokeAsync<string>("ipAddressInterop.getClientIPAddress");
         }
 
        userService.SaveOrUpdate(User);
