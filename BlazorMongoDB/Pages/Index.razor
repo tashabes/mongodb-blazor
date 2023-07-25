@@ -6,6 +6,7 @@
 
 @code {
     private string SystemDetail;
+    private string IpAddress;
     string message = string.Empty;
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -13,7 +14,8 @@
         if (firstRender)
         {
             SystemDetail = await jsRuntime.InvokeAsync<string>("getUserAgent");
-            var user = userService.GetUser(SystemDetail);
+            IpAddress = await jsRuntime.InvokeAsync<string>("ipAddressInterop.getClientIPAddress");
+            var user = userService.GetUser(SystemDetail, IpAddress);
             Console.WriteLine(user);
             if (user != null)
             {

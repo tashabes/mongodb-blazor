@@ -24,11 +24,11 @@ namespace BlazorMongoDB.Service
 
         }
 
-        public Users GetUser(string systemDetail)
+        public Users GetUser(string systemDetail, string ipAddress)
         {
-           return _userTable.Find(x=>x.SystemDetail == systemDetail).FirstOrDefault();
-
+            return _userTable.Find(x => x.SystemDetail == systemDetail && x.IPAddress == ipAddress).FirstOrDefault();
         }
+
 
         public List<Users> GetUsers()
         {
