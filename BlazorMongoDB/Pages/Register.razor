@@ -62,7 +62,7 @@
     }
     private async Task SaveAsync()
     {
-        User.MachineName1 = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+        User.MachineName1 = await jsRuntime.InvokeAsync<string>("ipAddressInterop.getClientIPAddress");
         User.OperatingSystem = await jsRuntime.InvokeAsync<string>("getClientOS");
         //User.DeviceModel = DeviceInfo.Model;
         bool containsMac = User.OperatingSystem.Contains("Darwin");
