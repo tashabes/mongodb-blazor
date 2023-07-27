@@ -3,7 +3,6 @@
 @using BlazorMongoDB.Service;
 @inject BlazorMongoDB.IService.IUserService userService
 @inject IJSRuntime jsRuntime
-@inject BlazorMongoDB.Service.UserIPAddressService userIPAddressService
 @using Microsoft.AspNetCore.Http
 @using Xamarin.Essentials;
 @inject NavigationManager navManager
@@ -30,6 +29,21 @@
                 <input @bind="User.PhoneNumber" style="width:100%;" placeholder="Phone Number" />
             </div>
         </div>
+        <br />
+@*        <div class="row">
+            <div class="col-md-4">
+                <label>Company:</label>
+            </div>
+            <div class="col-md-8">
+                <InputSelect @bind-Value="SelectedCompanyId" style="width:100%;">
+                    <option value="">Select a Company</option>
+                    @foreach (var company in Companies)
+                    {
+                        <option value="@company.Id">@company.Name</option>
+                    }
+                </InputSelect>
+            </div>
+        </div>*@
         <br />
 
         <div class="row">
@@ -104,6 +118,26 @@
     {
         userService.Delete(userId);
         GetUsers();
+    }
+
+
+}
+
+@code {
+    private string SelectedCompanyId;
+    private List<Company> Companies = new List<Company>
+    {
+        new Company { CompanyId = "1", CompanyName = "Company A" },
+        new Company { CompanyId = "2", CompanyName = "Company B" },
+        new Company { CompanyId = "3", CompanyName = "Company C" },
+        // Add more companies to the list as needed
+    };
+
+    // Replace this class with your actual Company data model
+    public class Company
+    {
+        public string CompanyId { get; set; }
+        public string CompanyName { get; set; }
     }
 }
 

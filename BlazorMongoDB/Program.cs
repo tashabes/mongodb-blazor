@@ -13,9 +13,10 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<ICompaniesService, CompaniesService>();
 // Add this to the ConfigureServices method in Startup.cs
 builder.Services.AddHttpContextAccessor();
-builder.Services.AddScoped<BlazorMongoDB.Service.UserIPAddressService>();
+
 
 
 
