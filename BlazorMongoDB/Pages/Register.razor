@@ -2,6 +2,7 @@
 @using BlazorMongoDB.Data
 @using BlazorMongoDB.Service;
 @inject BlazorMongoDB.IService.IUserService userService
+@inject BlazorMongoDB.IService.ICompaniesService companyService
 @inject IJSRuntime jsRuntime
 @using Microsoft.AspNetCore.Http
 @using Xamarin.Essentials;
@@ -29,6 +30,21 @@
                 <input @bind="User.PhoneNumber" style="width:100%;" placeholder="Phone Number" />
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Company:</label>
+            </div>
+            <div class="col-md-8">
+                <select @bind="User.CompanyId" style="width:100%;">
+                    <option value="">Select a Company</option>
+                    @foreach (var company in Companies)
+                    {
+                        <option value="@company.CompanyId">@company.CompanyName</option>
+                    }
+                </select>
+            </div>
+        </div>
+
         <br />
 
 
@@ -67,11 +83,19 @@
         User.UniqueIdentifier = await jsRuntime.InvokeAsync<string>("uuidInterop.getUUID");
         await jsRuntime.InvokeVoidAsync("localStorage.setItem", "userUniqueIdentifier", User.UniqueIdentifier);
         User.IPAddress = await jsRuntime.InvokeAsync<string>("ipAddressInterop.getClientIPAddress");
-
         bool containsMac = User.SystemDetail.Contains("Macintosh");
         bool containsWindows = User.SystemDetail.Contains("Windows");
         bool containsAndroid = User.SystemDetail.Contains("Android");
         bool containsiOS = User.SystemDetail.Contains("iPhone");
+        if (!string.IsNullOrEmpty(User.CompanyId))
+        {
+            var selectedCompany = Companies.FirstOrDefault(c => c.CompanyId == User.CompanyId);
+            if (selectedCompany != null)
+            {
+                User.CompanyName = selectedCompany.CompanyName;
+            }
+        }
+
         if(containsWindows)
         {
             User.System = "Windows";

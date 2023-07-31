@@ -23,7 +23,10 @@ namespace BlazorMongoDB.Data
 
         public string IPAddress { get; set; }
 
-        public string Company { get; set; }
+        public string CompanyName { get; set; }
+
+
+        public string CompanyId { get; set; }
 
     }
 }
