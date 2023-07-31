@@ -3,7 +3,7 @@ using BlazorMongoDB.IService;
 using BlazorMongoDB.Service;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
-
+using Microsoft.JSInterop;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +14,7 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ICompaniesService, CompaniesService>();
+
 // Add this to the ConfigureServices method in Startup.cs
 builder.Services.AddHttpContextAccessor();
 
