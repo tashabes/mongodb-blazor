@@ -5,19 +5,19 @@
     @inject IJSRuntime jsRuntime
 
     @code {
-        private string SystemDetail;
-        private string IpAddress;
+        //private string SystemDetail;
+        //private string IpAddress;
         string message = string.Empty;
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             if (firstRender)
             {
-                SystemDetail = await jsRuntime.InvokeAsync<string>("getUserAgent");
-                IpAddress = await jsRuntime.InvokeAsync<string>("ipAddressInterop.getClientIPAddress");
-                var user = userService.GetUser(SystemDetail, IpAddress);
+                //SystemDetail = await jsRuntime.InvokeAsync<string>("getUserAgent");
+                //IpAddress = await jsRuntime.InvokeAsync<string>("ipAddressInterop.getClientIPAddress");
+                //var user = userService.GetUser(SystemDetail, IpAddress);
 
-                Console.WriteLine(user);
+                //Console.WriteLine(user);
 
             string uniqueIdentifier = await jsRuntime.InvokeAsync<string>("localStorage.getItem", "userUniqueIdentifier");
             if (!string.IsNullOrEmpty(uniqueIdentifier))

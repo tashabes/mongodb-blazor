@@ -39,9 +39,9 @@ namespace BlazorMongoDB.Service
             await _jsRuntime.InvokeVoidAsync("localStorage.removeItem", "userUniqueIdentifier");
         }
 
-        public Users GetUser(string systemDetail, string ipAddress)
+        public Users GetUser(string uniqueIdentifier)
         {
-            return _userTable.Find(x => x.SystemDetail == systemDetail && x.IPAddress == ipAddress).FirstOrDefault();
+            return _userTable.Find(x => x.UniqueIdentifier == uniqueIdentifier).FirstOrDefault();
         }
 
 

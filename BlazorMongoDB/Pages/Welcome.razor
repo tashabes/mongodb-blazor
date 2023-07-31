@@ -20,9 +20,10 @@
     protected override async Task OnInitializedAsync()
     {
         // Use await to get the result from the JavaScript Interop method.
-        SystemDetail = await jsRuntime.InvokeAsync<string>("getUserAgent");
-        IpAddress = await jsRuntime.InvokeAsync<string>("ipAddressInterop.getClientIPAddress");
-        user = userService.GetUser(SystemDetail, IpAddress);
+       // SystemDetail = await jsRuntime.InvokeAsync<string>("getUserAgent");
+       // IpAddress = await jsRuntime.InvokeAsync<string>("ipAddressInterop.getClientIPAddress");
+        string uniqueIdentifier = await jsRuntime.InvokeAsync<string>("localStorage.getItem", "userUniqueIdentifier");
+        user = userService.GetUser(uniqueIdentifier);
     }
 
     private void NavigateToAnotherPage()
