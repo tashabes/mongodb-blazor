@@ -1,32 +1,35 @@
-﻿@page "/"
-@using BlazorMongoDB.Data
-@inject BlazorMongoDB.IService.IUserService userService
-@inject NavigationManager navManager
-@inject IJSRuntime jsRuntime
+﻿    @page "/"
+    @using BlazorMongoDB.Data
+    @inject BlazorMongoDB.IService.IUserService userService
+    @inject NavigationManager navManager
+    @inject IJSRuntime jsRuntime
 
-@code {
-    private string SystemDetail;
-    private string IpAddress;
-    string message = string.Empty;
+    @code {
+        private string SystemDetail;
+        private string IpAddress;
+        string message = string.Empty;
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
+        protected override async Task OnAfterRenderAsync(bool firstRender)
         {
-            SystemDetail = await jsRuntime.InvokeAsync<string>("getUserAgent");
-            IpAddress = await jsRuntime.InvokeAsync<string>("ipAddressInterop.getClientIPAddress");
-            var user = userService.GetUser(SystemDetail, IpAddress);
-            Console.WriteLine(user);
-            if (user != null)
+            if (firstRender)
             {
-                navManager.NavigateTo("/welcome");
-            }
-            else
-            {
-                navManager.NavigateTo("/register");
+                SystemDetail = await jsRuntime.InvokeAsync<string>("getUserAgent");
+                IpAddress = await jsRuntime.InvokeAsync<string>("ipAddressInterop.getClientIPAddress");
+                var user = userService.GetUser(SystemDetail, IpAddress);
+
+                Console.WriteLine(user);
+
+            string uniqueIdentifier = await jsRuntime.InvokeAsync<string>("localStorage.getItem", "userUniqueIdentifier");
+            if (!string.IsNullOrEmpty(uniqueIdentifier))
+                {
+                    navManager.NavigateTo("/welcome");
+                }
+                else
+                {
+                    navManager.NavigateTo("/register");
+                }
             }
         }
     }
-}
 
 
