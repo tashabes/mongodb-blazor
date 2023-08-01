@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using Microsoft.AspNetCore.Routing.Constraints;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace BlazorMongoDB.Data
 {
@@ -11,6 +12,10 @@ namespace BlazorMongoDB.Data
         public string Address { get; set; }
 
         public string PhoneNumber { get; set; }
+
+        public string FileName { get; set; }
+
+        public byte Image_Data { get; set; }
 
     }
 }
