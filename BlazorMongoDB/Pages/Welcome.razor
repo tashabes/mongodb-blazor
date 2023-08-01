@@ -5,13 +5,13 @@
 @inject NavigationManager navManager
 @inject IJSRuntime jsRuntime
 
-<h3>Welcome back, @user.Name</h3>
+<h3>Good @GetGreeting(), @user.Name</h3>
 
 @if (company.FileName != null)
 {
     <div>
 
-        <img src="@company.FileName" alt="Company Logo" />
+        <img class="logo-image" src="@company.FileName" alt="Company Logo" />
     </div>
 }
 else
@@ -52,5 +52,23 @@ else
     private void NavigateToCompanies()
     {
         navManager.NavigateTo("/companies");
+    }
+
+    private string GetGreeting()
+    {
+        var currentTime = DateTime.Now;
+
+        if (currentTime.Hour >= 5 && currentTime.Hour < 12)
+        {
+            return "morning";
+        }
+        else if (currentTime.Hour >= 12 && currentTime.Hour < 17)
+        {
+            return "afternoon";
+        }
+        else
+        {
+            return "evening";
+        }
     }
 }
