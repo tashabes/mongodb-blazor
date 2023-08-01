@@ -1,4 +1,7 @@
-﻿@inherits LayoutComponentBase
+﻿@using BlazorMongoDB.Data
+@inject BlazorMongoDB.IService.IUserService userService
+@inject IJSRuntime jsRuntime
+@inherits LayoutComponentBase
 
 <PageTitle>BlazorMongoDB</PageTitle>
 
@@ -8,10 +11,58 @@
     </div>
 
     <main>
-
+        <div class="top-row px-4">
+            @if (user != null)
+            {
+                <h3>Good @GetGreeting(), @user.Name</h3>
+            } else
+            {
+                <h3></h3>
+            }
+        </div>
 
         <article class="content px-4">
             @Body
         </article>
     </main>
 </div>
+
+@code{
+    Users user = new Users();
+    bool isLoaded = false; // Track whether data has been loaded.
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        // Check if it's the first render and the data is not loaded yet.
+        if (firstRender && !isLoaded)
+        {
+            string uniqueIdentifier = await jsRuntime.InvokeAsync<string>("localStorage.getItem", "userUniqueIdentifier");
+            user = userService.GetUser(uniqueIdentifier);
+         
+
+            // Mark the data as loaded to prevent subsequent calls.
+            isLoaded = true;
+
+            // Re-render the component to update the UI with the loaded data.
+            StateHasChanged();
+        }
+    }
+
+    private string GetGreeting()
+    {
+        var currentTime = DateTime.Now;
+
+        if (currentTime.Hour >= 5 && currentTime.Hour < 12)
+        {
+            return "morning";
+        }
+        else if (currentTime.Hour >= 12 && currentTime.Hour < 17)
+        {
+            return "afternoon";
+        }
+        else
+        {
+            return "evening";
+        }
+    }
+}
