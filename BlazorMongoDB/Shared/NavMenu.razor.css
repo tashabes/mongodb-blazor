@@ -1,10 +1,11 @@
+/* Remove the media query for hiding .navbar-toggler */
 .navbar-toggler {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
 .top-row {
     height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .navbar-brand {
@@ -40,27 +41,39 @@
         line-height: 3rem;
     }
 
-.nav-item ::deep a.active {
-    background-color: rgba(255,255,255,0.25);
-    color: white;
+        .nav-item ::deep a.active {
+            background-color: rgba(255, 255, 255, 0.25);
+            color: white;
+        }
+
+        .nav-item ::deep a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+/* Remove the media query for hiding .navbar-toggler */
+.navbar-toggler {
+    display: none;
 }
 
-.nav-item ::deep a:hover {
-    background-color: rgba(255,255,255,0.1);
-    color: white;
+/* Remove the media query for overriding .collapse */
+.collapse {
+    /* By default, let the sidebar collapse for wide screens too */
+    display: none;
 }
 
+/* Add a media query for wide screens where you want to show the sidebar */
 @media (min-width: 641px) {
     .navbar-toggler {
         display: none;
     }
 
     .collapse {
-        /* Never collapse the sidebar for wide screens */
+        /* Display the sidebar for wide screens */
         display: block;
     }
 }
 
-.logo-image{
+.logo-image {
     width: 100px;
 }

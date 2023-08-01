@@ -70,13 +70,14 @@ main[b-7g7crtatxm] {
     }
 }
 /* _content/BlazorMongoDB/Shared/NavMenu.razor.rz.scp.css */
+/* Remove the media query for hiding .navbar-toggler */
 .navbar-toggler[b-5ezltn948t] {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
 .top-row[b-5ezltn948t] {
     height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .navbar-brand[b-5ezltn948t] {
@@ -112,27 +113,39 @@ main[b-7g7crtatxm] {
         line-height: 3rem;
     }
 
-.nav-item[b-5ezltn948t]  a.active {
-    background-color: rgba(255,255,255,0.25);
-    color: white;
+        .nav-item[b-5ezltn948t]  a.active {
+            background-color: rgba(255, 255, 255, 0.25);
+            color: white;
+        }
+
+        .nav-item[b-5ezltn948t]  a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+/* Remove the media query for hiding .navbar-toggler */
+.navbar-toggler[b-5ezltn948t] {
+    display: none;
 }
 
-.nav-item[b-5ezltn948t]  a:hover {
-    background-color: rgba(255,255,255,0.1);
-    color: white;
+/* Remove the media query for overriding .collapse */
+.collapse[b-5ezltn948t] {
+    /* By default, let the sidebar collapse for wide screens too */
+    display: none;
 }
 
+/* Add a media query for wide screens where you want to show the sidebar */
 @media (min-width: 641px) {
     .navbar-toggler[b-5ezltn948t] {
         display: none;
     }
 
     .collapse[b-5ezltn948t] {
-        /* Never collapse the sidebar for wide screens */
+        /* Display the sidebar for wide screens */
         display: block;
     }
 }
 
-.logo-image[b-5ezltn948t]{
+.logo-image[b-5ezltn948t] {
     width: 100px;
 }
