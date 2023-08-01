@@ -2,7 +2,7 @@
 @using BlazorMongoDB.Data
 @using BlazorMongoDB.Service;
 @inject BlazorMongoDB.IService.IUserService userService
-@inject BlazorMongoDB.IService.ICompaniesService companyService
+@inject BlazorMongoDB.IService.ICompaniesService companiesService
 @inject IJSRuntime jsRuntime
 @using Microsoft.AspNetCore.Http
 @using Xamarin.Essentials;
@@ -39,11 +39,12 @@
                     <option value="">Select a Company</option>
                     @foreach (var company in Companies)
                     {
-                        <option value="@company.CompanyId">@company.CompanyName</option>
+                        <option value="@company.Id">@company.Name</option>
                     }
                 </select>
             </div>
         </div>
+
 
         <br />
 
@@ -65,17 +66,28 @@
 @code {
 
     Users User = new Users();
-
+    Companies Company = new Companies();
     List<Users> Users = new List<Users>();
+    List<Companies> Companies = new List<Companies>();
 
     protected override async Task OnInitializedAsync()
     {
         GetUsers();
+        await GetCompanies();
     }
     private void GetUsers()
     {
         Users = userService.GetUsers();
     }
+    private async Task GetCompanies()
+    {
+        Companies = companiesService.GetCompanies();
+    }
+    //public Companies GetCompany(string id)
+    //{
+    //    return _companyTable.Find(x => x.Id == id).FirstOrDefault();
+    //}
+
     private async Task SaveAsync()
     {
         User.SystemDetail = await jsRuntime.InvokeAsync<string>("getUserAgent");
@@ -83,19 +95,13 @@
         User.UniqueIdentifier = await jsRuntime.InvokeAsync<string>("uuidInterop.getUUID");
         await jsRuntime.InvokeVoidAsync("localStorage.setItem", "userUniqueIdentifier", User.UniqueIdentifier);
         User.IPAddress = await jsRuntime.InvokeAsync<string>("ipAddressInterop.getClientIPAddress");
+        Company = companiesService.GetCompany(User.CompanyId);
+        User.CompanyName = Company.Name;
         bool containsMac = User.SystemDetail.Contains("Macintosh");
         bool containsWindows = User.SystemDetail.Contains("Windows");
         bool containsAndroid = User.SystemDetail.Contains("Android");
         bool containsiOS = User.SystemDetail.Contains("iPhone");
-        if (!string.IsNullOrEmpty(User.CompanyId))
-        {
-            var selectedCompany = Companies.FirstOrDefault(c => c.CompanyId == User.CompanyId);
-            if (selectedCompany != null)
-            {
-                User.CompanyName = selectedCompany.CompanyName;
-            }
-        }
-
+     
         if(containsWindows)
         {
             User.System = "Windows";
@@ -135,21 +141,5 @@
 
 }
 
-@code {
-    private string SelectedCompanyId;
-    private List<Company> Companies = new List<Company>
-    {
-        new Company { CompanyId = "1", CompanyName = "Company A" },
-        new Company { CompanyId = "2", CompanyName = "Company B" },
-        new Company { CompanyId = "3", CompanyName = "Company C" },
-        // Add more companies to the list as needed
-    };
 
-    // Replace this class with your actual Company data model
-    public class Company
-    {
-        public string CompanyId { get; set; }
-        public string CompanyName { get; set; }
-    }
-}
 

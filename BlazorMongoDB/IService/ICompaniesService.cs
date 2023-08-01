@@ -6,7 +6,7 @@ namespace BlazorMongoDB.IService
     {
         void SaveOrUpdate(Companies company);
 
-        Companies GetCompany(string name);
+        Companies GetCompany(string id);
 
         List<Companies> GetCompanies();
 

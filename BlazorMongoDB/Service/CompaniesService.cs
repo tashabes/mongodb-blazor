@@ -24,14 +24,16 @@ namespace BlazorMongoDB.Service
 
         }
 
+       
+
         public List<Companies> GetCompanies()
         {
             return _companyTable.Find(FilterDefinition<Companies>.Empty).ToList();
         }
 
-        public Companies GetCompany(string name)
+        public Companies GetCompany(string id)
         {
-            return _companyTable.Find(x => x.Name == name).FirstOrDefault();
+            return _companyTable.Find(x => x.Id == id).FirstOrDefault();
         }
 
         public void SaveOrUpdate(Companies company)
