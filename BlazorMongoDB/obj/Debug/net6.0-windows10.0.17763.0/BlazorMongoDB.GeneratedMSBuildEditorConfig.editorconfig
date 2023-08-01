@@ -48,6 +48,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/NatashaAbel/source/repos/BlazorMongoDB/BlazorMongoDB/Shared/AlternateLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEFsdGVybmF0ZUxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-qo5z03jy5e
+
 [C:/Users/NatashaAbel/source/repos/BlazorMongoDB/BlazorMongoDB/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-7g7crtatxm

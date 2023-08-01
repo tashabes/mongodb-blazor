@@ -1,12 +1,19 @@
-﻿<Router AppAssembly="@typeof(App).Assembly">
+﻿@using BlazorMongoDB.Shared
+
+<Router AppAssembly="@typeof(App).Assembly">
+    <!-- Use MainLayout as the default layout -->
     <Found Context="routeData">
         <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
         <FocusOnNavigate RouteData="@routeData" Selector="h1" />
     </Found>
     <NotFound>
         <PageTitle>Not found</PageTitle>
-        <LayoutView Layout="@typeof(MainLayout)">
+        <!-- Use AlternateLayout for the NotFound page -->
+        <LayoutView Layout="@typeof(AlternateLayout)">
             <p role="alert">Sorry, there's nothing at this address.</p>
         </LayoutView>
     </NotFound>
 </Router>
+
+
+

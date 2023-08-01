@@ -1,35 +1,26 @@
-﻿@page "/welcome";
+﻿@inherits LayoutComponentBase
 @using BlazorMongoDB.Data
 @inject BlazorMongoDB.IService.IUserService userService
 @inject BlazorMongoDB.IService.ICompaniesService companiesService
-@inject NavigationManager navManager
 @inject IJSRuntime jsRuntime
-@layout AlternateLayout 
 
-@*//<h3>Good @GetGreeting(), @user.Name</h3>*@
+<PageTitle>BlazorMongoDB</PageTitle>
 
-@if (company.FileName != null)
-{
-    <div>
-
-        <img class="logo-image" src="@company.FileName" alt="Company Logo" />
+<div class="page">
+    <div class="sidebar">
+       
     </div>
-}
-else
-{
-    <p>Image not found.</p>
-}
 
-<br />
+    <main>
+        <div class="top-row px-4">
+            <h3>Good @GetGreeting(), @user.Name</h3>
+        </div>
 
-<h4>Your Company:</h4>
-<h5>@company.Name</h5>
-<h5>@company.Address</h5>
-<h5>@company.PhoneNumber</h5>
-
-<br />
-<button class="btn btn-primary" @onclick="NavigateToAnotherPage">Users</button>
-<button class="btn btn-primary" @onclick="NavigateToCompanies">Companies</button>
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
 
 @code {
 
@@ -44,15 +35,6 @@ else
         user = userService.GetUser(uniqueIdentifier);
         company = companiesService.GetCompany(user.CompanyId);
 
-    }
-
-    private void NavigateToAnotherPage()
-    {
-        navManager.NavigateTo("/users");
-    }
-    private void NavigateToCompanies()
-    {
-        navManager.NavigateTo("/companies");
     }
 
     private string GetGreeting()
