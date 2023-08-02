@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Routing.Constraints;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using System.Drawing;
 
 namespace BlazorMongoDB.Data
 {
@@ -16,6 +18,7 @@ namespace BlazorMongoDB.Data
         public string FileName { get; set; }
 
         public byte Image_Data { get; set; }
+        public string Color { get; set; }
 
     }
 }

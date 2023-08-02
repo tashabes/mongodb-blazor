@@ -48,3 +48,8 @@ C:\Users\NatashaAbel\source\repos\BlazorMongoDB\BlazorMongoDB\obj\Debug\net6.0-w
 C:\Users\NatashaAbel\source\repos\BlazorMongoDB\BlazorMongoDB\obj\Debug\net6.0-windows10.0.17763.0\BlazorMongoDB.genruntimeconfig.cache
 C:\Users\NatashaAbel\source\repos\BlazorMongoDB\BlazorMongoDB\obj\Debug\net6.0-windows10.0.17763.0\ref\BlazorMongoDB.dll
 C:\Users\NatashaAbel\source\repos\BlazorMongoDB\BlazorMongoDB\obj\Debug\net6.0-windows10.0.17763.0\scopedcss\Shared\AlternateLayout.razor.rz.scp.css
+C:\Users\NatashaAbel\source\repos\BlazorMongoDB\BlazorMongoDB\bin\Debug\net6.0-windows10.0.17763.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\NatashaAbel\source\repos\BlazorMongoDB\BlazorMongoDB\bin\Debug\net6.0-windows10.0.17763.0\Microsoft.AspNetCore.Components.dll
+C:\Users\NatashaAbel\source\repos\BlazorMongoDB\BlazorMongoDB\bin\Debug\net6.0-windows10.0.17763.0\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\NatashaAbel\source\repos\BlazorMongoDB\BlazorMongoDB\bin\Debug\net6.0-windows10.0.17763.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\NatashaAbel\source\repos\BlazorMongoDB\BlazorMongoDB\bin\Debug\net6.0-windows10.0.17763.0\Microsoft.Extensions.Logging.Abstractions.dll

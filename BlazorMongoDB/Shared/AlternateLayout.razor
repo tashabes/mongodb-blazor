@@ -8,7 +8,7 @@
 
 <div class="page">
     <div class="sidebar">
-       
+        <NavMenu />
     </div>
 
     <main>
@@ -33,7 +33,10 @@
 
         string uniqueIdentifier = await jsRuntime.InvokeAsync<string>("localStorage.getItem", "userUniqueIdentifier");
         user = userService.GetUser(uniqueIdentifier);
-        company = companiesService.GetCompany(user.CompanyId);
+        if (user != null)
+        {
+            company = companiesService.GetCompany(user.CompanyId);
+        }
 
     }
 
