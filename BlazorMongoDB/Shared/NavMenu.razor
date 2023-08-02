@@ -54,8 +54,10 @@
         {
             string uniqueIdentifier = await jsRuntime.InvokeAsync<string>("localStorage.getItem", "userUniqueIdentifier");
             user = userService.GetUser(uniqueIdentifier);
-            company = companiesService.GetCompany(user.CompanyId);
-
+            if (user != null)
+            {
+                company = companiesService.GetCompany(user.CompanyId);
+            }
             // Mark the data as loaded to prevent subsequent calls.
             isLoaded = true;
 

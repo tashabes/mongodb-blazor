@@ -26,6 +26,7 @@
 
     <main>
         <div class="top-row px-4">
+            
             <h3>Good @GetGreeting(), @user.Name <span class="user-initial-circle">@userInitial</span></h3>
             
         </div>
@@ -47,12 +48,16 @@
     {
 
         string uniqueIdentifier = await jsRuntime.InvokeAsync<string>("localStorage.getItem", "userUniqueIdentifier");
-        user = userService.GetUser(uniqueIdentifier);
-        userInitial = user.Name.Substring(0, 1);
+        if (uniqueIdentifier != null)
+        {
+            user = userService.GetUser(uniqueIdentifier);
+        }
         if (user != null)
         {
+            userInitial = user.Name.Substring(0, 1);
             company = companiesService.GetCompany(user.CompanyId);
         }
+        
 
     }
 
