@@ -38,7 +38,6 @@ C:\Users\NatashaAbel\source\repos\BlazorMongoDB\BlazorMongoDB\obj\Debug\net6.0-w
 C:\Users\NatashaAbel\source\repos\BlazorMongoDB\BlazorMongoDB\obj\Debug\net6.0-windows10.0.17763.0\staticwebassets.build.json
 C:\Users\NatashaAbel\source\repos\BlazorMongoDB\BlazorMongoDB\obj\Debug\net6.0-windows10.0.17763.0\staticwebassets.development.json
 C:\Users\NatashaAbel\source\repos\BlazorMongoDB\BlazorMongoDB\obj\Debug\net6.0-windows10.0.17763.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
-C:\Users\NatashaAbel\source\repos\BlazorMongoDB\BlazorMongoDB\obj\Debug\net6.0-windows10.0.17763.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
 C:\Users\NatashaAbel\source\repos\BlazorMongoDB\BlazorMongoDB\obj\Debug\net6.0-windows10.0.17763.0\scopedcss\bundle\BlazorMongoDB.styles.css
 C:\Users\NatashaAbel\source\repos\BlazorMongoDB\BlazorMongoDB\obj\Debug\net6.0-windows10.0.17763.0\scopedcss\projectbundle\BlazorMongoDB.bundle.scp.css
 C:\Users\NatashaAbel\source\repos\BlazorMongoDB\BlazorMongoDB\obj\Debug\net6.0-windows10.0.17763.0\BlazorMongoDB.csproj.CopyComplete
