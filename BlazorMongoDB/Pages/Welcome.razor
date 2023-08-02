@@ -6,30 +6,48 @@
 @inject IJSRuntime jsRuntime
 @layout AlternateLayout 
 
-@*//<h3>Good @GetGreeting(), @user.Name</h3>*@
 
-@if (company.FileName != null)
-{
-    <div>
 
-        <img class="logo-image" src="@company.FileName" alt="Company Logo" />
+
+<br />
+
+<div class="dashboard-blocks">
+    <div class="dashboard-header-block">
+        <div class="oi oi-bell dashboard-icon"></div>
+            <div class="dashboard-child">
+            <h6>Notifications</h6>
+            <p class="dashboard-text">You have 1 time sheet to approve.</p>
+        
+        </div>
     </div>
-}
-else
-{
-    <p>Image not found.</p>
-}
+    <div class="dashboard-header-block">
+        <div class="oi oi-envelope-closed dashboard-icon"></div>
+        <div class="dashboard-child">
+            <h6>Messages</h6>
+            <p class="dashboard-text">You have 0 new messages.</p>
 
+        </div>
+    </div>
+    <div class="dashboard-header-block">
+        <div class="oi oi-british-pound dashboard-icon"></div>
+        <div class="dashboard-child">
+            <h6>Payments</h6>
+            <p class="dashboard-text">You have 2 payments to approve.</p>
+
+        </div>
+    </div>
+</div>
 <br />
 
-<h4>Your Company:</h4>
-<h5>@company.Name</h5>
-<h5>@company.Address</h5>
-<h5>@company.PhoneNumber</h5>
-
-<br />
 <button class="btn btn-primary" @onclick="NavigateToAnotherPage">Users</button>
 <button class="btn btn-primary" @onclick="NavigateToCompanies">Companies</button>
+<footer>
+    <h4>Your Company:</h4>
+    <h5>@company.Name</h5>
+    <h5>@company.Address</h5>
+    <h5>@company.PhoneNumber</h5>
+</footer>
+
 
 @code {
 

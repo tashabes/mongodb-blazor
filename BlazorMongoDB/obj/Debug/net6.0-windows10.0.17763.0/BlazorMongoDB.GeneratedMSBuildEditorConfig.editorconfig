@@ -20,16 +20,32 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/NatashaAbel/source/repos/BlazorMongoDB/BlazorMongoDB/Pages/Account.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/NatashaAbel/source/repos/BlazorMongoDB/BlazorMongoDB/Pages/CompaniesPage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcGFuaWVzUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/NatashaAbel/source/repos/BlazorMongoDB/BlazorMongoDB/Pages/Expenses.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXhwZW5zZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/NatashaAbel/source/repos/BlazorMongoDB/BlazorMongoDB/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/NatashaAbel/source/repos/BlazorMongoDB/BlazorMongoDB/Pages/Payments.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGF5bWVudHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/NatashaAbel/source/repos/BlazorMongoDB/BlazorMongoDB/Pages/Register.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/NatashaAbel/source/repos/BlazorMongoDB/BlazorMongoDB/Pages/Timesheets.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGltZXNoZWV0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/NatashaAbel/source/repos/BlazorMongoDB/BlazorMongoDB/Pages/UserPage.razor]
