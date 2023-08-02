@@ -4,6 +4,12 @@
 @inject BlazorMongoDB.IService.ICompaniesService companiesService
 @inject IJSRuntime jsRuntime
 
+<style>
+    .sidebar {
+        background-color: @company.Color;
+    }
+</style>
+
 <PageTitle>BlazorMongoDB</PageTitle>
 
 <div class="page">
@@ -14,6 +20,7 @@
     <main>
         <div class="top-row px-4">
             <h3>Good @GetGreeting(), @user.Name</h3>
+            
         </div>
 
         <article class="content px-4">
